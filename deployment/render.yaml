@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: shl-assessment-recommender
+    env: docker
+    dockerfilePath: ./deployment/Dockerfile
+    region: oregon
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: LLM_PROVIDER
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
