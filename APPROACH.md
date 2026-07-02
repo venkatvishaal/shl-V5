@@ -37,4 +37,4 @@ We measure performance via an offline evaluation harness (`scripts/evaluate.py`)
 - **Hallucinations / Schema Failures**: `0`.
 
 ## 6. Deployment Readiness
-The V3 project is fully containerized and submission-ready. A standard `Dockerfile` and a sanitized `.env` template are provided for deployment on platforms like Render or Railway.
+The V5 project is fully containerized and submission-ready. A standard `Dockerfile` and a sanitized `.env` template are provided for deployment on platforms like Render or Railway.
