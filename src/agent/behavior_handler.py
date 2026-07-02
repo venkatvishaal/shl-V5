@@ -741,47 +741,66 @@ class BehaviorHandler:
         self, candidates: List[Dict]
     ) -> Tuple[str, List[Dict]]:
         """Use the deterministic relevance order with diversity guarantees."""
-        # Separate by type for diversity injection
-        type_order = {"K": 0, "A": 1, "P": 2, "SI": 3, "S": 4, "E": 5, "C": 6, "D": 7}
-        
-        seen = set()
-        recs = []
-        diversity = []  # P, SI, S types for guaranteed inclusion
-        
+        seen_urls: set = set()
+        scored_recs: List[Dict] = []
+        diversity_recs: List[Dict] = []
+
         for item in candidates:
             url = item.get("url", "")
-            if url in seen:
+            if url in seen_urls:
                 continue
-            seen.add(url)
-            
-            t = (item.get("test_type") or "U")[0]  # first type code
-            
-            # Keep only the required schema fields
-            clean_item = {
-                "name": item.get("name", ""),
-                "url": url,
-                "test_type": item.get("test_type", "U"),
-            }
-            
+            seen_urls.add(url)
+
+            t = (item.get("test_type") or "U")[0]
             if t in ("P", "SI", "S"):
-                diversity.append(clean_item)
-            elif len(recs) < 10:
-                recs.append(clean_item)
-        
-        # Fill remaining slots with diversity types first
-        for item in diversity:
-            if len(recs) >= 10:
+                diversity_recs.append({
+                    "name": item["name"],
+                    "url": item["url"],
+                    "test_type": item.get("test_type", "U"),
+                })
+            else:
+                scored_recs.append({
+                    "name": item["name"],
+                    "url": item["url"],
+                    "test_type": item.get("test_type", "U"),
+                })
+
+        # Interleave: fill most slots with scored order, but guarantee
+        # at least 1 P and 1 SI/S if they exist in the candidate pool.
+        final: List[Dict] = []
+        di = 0
+        target = 10
+
+        # First pass: add diversity types at positions 3 and 6
+        # so they don't get crowded out by high-scoring K/A items.
+        diversity_slots = {2, 5}  # 0-indexed: 3rd and 6th position
+
+        for idx in range(min(len(scored_recs), target)):
+            if len(final) in diversity_slots and di < len(diversity_recs):
+                final.append(diversity_recs[di])
+                di += 1
+            final.append(scored_recs[idx])
+
+        # Append remaining diversity items
+        while di < len(diversity_recs) and len(final) < target:
+            final.append(diversity_recs[di])
+            di += 1
+
+        # Append remaining scored items if room
+        for item in scored_recs:
+            if len(final) >= target:
                 break
-            recs.append(item)
-        
-        recs = recs[:10]
-        
+            if item["url"] not in {r["url"] for r in final}:
+                final.append(item)
+
+        final = final[:target]
+
         lines = [
             "Based on your requirements, here are the most relevant SHL assessments:"
         ]
-        for i, r in enumerate(recs, 1):
-            lines.append(f"{i}. {r['name']} [{r.get('test_type', 'U')}]")
-        return "\n".join(lines), recs
+        for i, r in enumerate(final, 1):
+            lines.append(f"{i}. {r['name']} [{r['test_type']}]")
+        return "\n".join(lines), final
 
     # ── Comparison target extraction ────────────────────────────────────
 
