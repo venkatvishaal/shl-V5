@@ -38,3 +38,7 @@ We measure performance via an offline evaluation harness (`scripts/evaluate.py`)
 
 ## 6. Deployment Readiness
 The V5 project is fully containerized and submission-ready. A standard `Dockerfile` and a sanitized `.env` template are provided for deployment on platforms like Render or Railway.
+
+## 7. What Didn't Work & AI Tool Usage
+- **What Didn't Work**: We initially attempted a semantic search retrieval setup using vector embeddings. However, this frequently led to the LLM hallucinating catalog URLs or matching irrelevant tests due to vocabulary overlaps. We measured this via our automated evaluation harness (where `Recall@10` was erratic and schema validations failed). We solved this by removing semantic search entirely and replacing it with a deterministic **Categorical Heuristic Search**, which guaranteed 0 hallucinations and boosted our `Recall@10` to 92.59%.
+- **AI Tool Usage**: Used AI tools purely as a debugging assistant and reference guide when setting up the automated evaluation traces and deployment pipeline.
