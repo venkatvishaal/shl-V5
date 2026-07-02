@@ -740,21 +740,47 @@ class BehaviorHandler:
     def _build_fallback_recommendations(
         self, candidates: List[Dict]
     ) -> Tuple[str, List[Dict]]:
-        """Use the deterministic relevance order when LLM wording is unavailable."""
-        recs = [
-            {
-                "name": item["name"],
-                "url": item["url"],
+        """Use the deterministic relevance order with diversity guarantees."""
+        # Separate by type for diversity injection
+        type_order = {"K": 0, "A": 1, "P": 2, "SI": 3, "S": 4, "E": 5, "C": 6, "D": 7}
+        
+        seen = set()
+        recs = []
+        diversity = []  # P, SI, S types for guaranteed inclusion
+        
+        for item in candidates:
+            url = item.get("url", "")
+            if url in seen:
+                continue
+            seen.add(url)
+            
+            t = (item.get("test_type") or "U")[0]  # first type code
+            
+            # Keep only the required schema fields
+            clean_item = {
+                "name": item.get("name", ""),
+                "url": url,
                 "test_type": item.get("test_type", "U"),
             }
-            for item in candidates[:10]
-        ]
-
+            
+            if t in ("P", "SI", "S"):
+                diversity.append(clean_item)
+            elif len(recs) < 10:
+                recs.append(clean_item)
+        
+        # Fill remaining slots with diversity types first
+        for item in diversity:
+            if len(recs) >= 10:
+                break
+            recs.append(item)
+        
+        recs = recs[:10]
+        
         lines = [
             "Based on your requirements, here are the most relevant SHL assessments:"
         ]
         for i, r in enumerate(recs, 1):
-            lines.append(f"{i}. {r['name']} [{r['test_type']}]")
+            lines.append(f"{i}. {r['name']} [{r.get('test_type', 'U')}]")
         return "\n".join(lines), recs
 
     # ── Comparison target extraction ────────────────────────────────────
