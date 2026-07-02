@@ -1,0 +1,25 @@
+{
+  "catalog_path": "C:\\TSVV\\SHL\\shl-V3\\data\\catalog.json",
+  "assessment_count": 368,
+  "unique_names": 368,
+  "unique_urls": 368,
+  "duplicate_names": [],
+  "duplicate_urls": [],
+  "missing_required_fields": [],
+  "invalid_shl_urls": [],
+  "test_type_counts": {
+    "A": 24,
+    "B": 10,
+    "C": 6,
+    "D": 5,
+    "E": 1,
+    "K": 223,
+    "P": 46,
+    "S": 27,
+    "SI": 1,
+    "U": 25
+  },
+  "duration_known_count": 282,
+  "duration_missing_count": 86,
+  "live_catalog_freshness_note": "This audit validates the local SHL catalog artifact used by the API."
+}

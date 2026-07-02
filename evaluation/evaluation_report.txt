@@ -1,0 +1,81 @@
+Evaluating all 10 traces
+2026-07-03 00:27:23 | INFO     | src.retrieval.catalog | Loaded 368 assessments from data/catalog.json
+Running traces...
+  [1/10] trace_001 � Mid-level Java Developer Hiring 2026-07-03 00:27:23 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:23 | WARNING  | src.agent.behavior_handler | recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:23 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=100%)
+  [2/10] trace_002 � Senior Leadership Role 2026-07-03 00:27:23 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:23 | WARNING  | src.agent.behavior_handler | recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:23 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=100%)
+  [3/10] trace_003 � Entry-level Customer Service 2026-07-03 00:27:23 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:23 | WARNING  | src.agent.behavior_handler | recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:23 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=100%)
+  [4/10] trace_004 � Data Scientist Hiring 2026-07-03 00:27:23 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:23 | WARNING  | src.agent.behavior_handler | recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:23 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=100%)
+  [5/10] trace_005 � Executive C-Suite Hire 2026-07-03 00:27:23 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:23 | WARNING  | src.agent.behavior_handler | recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:23 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=100%)
+  [6/10] trace_006 � JD Paste - Software Engineer 2026-07-03 00:27:23 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 1 messages
+2026-07-03 00:27:23 | INFO     | src.agent.conversation_manager | JD detected � routing to jd_recommend
+2026-07-03 00:27:24 | WARNING  | src.agent.behavior_handler | jd_recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:24 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=67%)
+  [7/10] trace_007 � Sales Role Assessment 2026-07-03 00:27:24 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:24 | WARNING  | src.agent.behavior_handler | recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:24 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=100%)
+  [8/10] trace_008 � Refinement Mid-Conversation 2026-07-03 00:27:24 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:24 | WARNING  | src.agent.behavior_handler | refine(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:24 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=67%)
+  [9/10] trace_009 � Comparison Request 2026-07-03 00:27:24 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 1 messages
+2026-07-03 00:27:24 | WARNING  | src.agent.behavior_handler | compare(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:24 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(N/A)
+  [10/10] trace_010 � Graduate Trainee Programme 2026-07-03 00:27:24 | INFO     | src.agent.conversation_manager | ConversationManager.process() � 5 messages
+2026-07-03 00:27:24 | WARNING  | src.agent.behavior_handler | recommend(): LLM failed (RuntimeError('LLM wording disabled; using grounded fallback')), using fallback
+2026-07-03 00:27:24 | INFO     | httpx | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+(Recall=100%)
+
+================================================================================
+  SHL RECOMMENDER � PHASE 7 EVALUATION REPORT
+================================================================================
+
+TRACE        PERSONA                                 RECALL  HITS     RECS
+--------------------------------------------------------------------------------
+  trace_001  Mid-level Java Developer Hiring           100%   3/3      Verify - Verbal Ability - Next Generation, Occupational Personality Questionnaire OPQ32r, SHL Verify Interactive - Numerical Reasoning (+7)
+  trace_002  Senior Leadership Role                    100%   3/3      Verify - Verbal Ability - Next Generation, Occupational Personality Questionnaire OPQ32r, SHL Verify Interactive - Numerical Reasoning (+7)
+  trace_003  Entry-level Customer Service              100%   2/2      Customer Service Phone Simulation, SHL Verify Interactive - Numerical Reasoning, Verify - Verbal Ability - Next Generation (+7)
+  trace_004  Data Scientist Hiring                     100%   2/2      SHL Verify Interactive - Numerical Reasoning, SHL Verify Interactive G+, SHL Verify Interactive Numerical Calculation (+7)
+  trace_005  Executive C-Suite Hire                    100%   2/2      Occupational Personality Questionnaire OPQ32r, OPQ Leadership Report, Motivation Questionnaire MQM5 (+7)
+  trace_006  JD Paste - Software Engineer               67%   2/3      Verify - Verbal Ability - Next Generation, Occupational Personality Questionnaire OPQ32r, Motivation Questionnaire MQM5 (+7)
+  trace_007  Sales Role Assessment                     100%   3/3      SHL Verify Interactive - Numerical Reasoning, Verify - Verbal Ability - Next Generation, Occupational Personality Questionnaire OPQ32r (+7)
+  trace_008  Refinement Mid-Conversation                67%   2/3      Verify - Verbal Ability - Next Generation, Occupational Personality Questionnaire OPQ32r, Motivation Questionnaire MQM5 (+7)
+  trace_009  Comparison Request                       N/A   �        
+  trace_010  Graduate Trainee Programme                100%   3/3      SHL Verify Interactive - Numerical Reasoning, SHL Verify Interactive G+, Verify - Verbal Ability - Next Generation (+7)
+--------------------------------------------------------------------------------
+
+  AGGREGATE STATISTICS
+  Evaluable traces              : 9
+  Mean Recall@10                : 92.59%
+  Std Dev Recall@10             : 0.139
+  Min Recall@10                 : 66.67%
+  Max Recall@10                 : 100.00%
+  Total hallucinations          : 0
+  Schema failures               : 0
+
+  PASS / FAIL
+  PASS Mean Recall@10 >= 50%                        (92.59%)
+  PASS Recall variance < 0.30 (no overfitting)      (0.139)
+  PASS Zero hallucinations                          (0)
+  PASS Zero schema failures                         (0)
+
+  ALL CHECKS PASSED
+================================================================================
+

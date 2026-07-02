@@ -1,0 +1,312 @@
+[
+  {
+    "trace_id": "trace_001",
+    "persona": "Mid-level Java Developer Hiring",
+    "facts": {
+      "role": "Java Developer",
+      "seniority": "mid",
+      "key_skills": ["java", "stakeholder management", "backend"],
+      "team_size": "5-8 people",
+      "industry": "fintech"
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I need to assess candidates for a Java developer position"
+      },
+      {
+        "role": "assistant",
+        "content": "What seniority level are you targeting?"
+      },
+      { "role": "user", "content": "Mid-level, about 4 years of experience" },
+      {
+        "role": "assistant",
+        "content": "What skills are most important to assess?"
+      },
+      {
+        "role": "user",
+        "content": "Java 8, stakeholder management, and backend architecture"
+      }
+    ],
+    "expected_shortlist": ["Java 8 (New)", "Occupational Personality Questionnaire OPQ32r", "Verify - Verbal Ability - Next Generation"],
+    "min_expected_count": 2
+  },
+  {
+    "trace_id": "trace_002",
+    "persona": "Senior Leadership Role",
+    "facts": {
+      "role": "Senior Manager",
+      "seniority": "senior",
+      "key_skills": ["leadership", "decision-making", "communication"],
+      "industry": "banking"
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm hiring a senior manager for our banking division"
+      },
+      {
+        "role": "assistant",
+        "content": "What competencies are most important for this role?"
+      },
+      {
+        "role": "user",
+        "content": "Leadership, strategic decision-making, and stakeholder communication"
+      },
+      {
+        "role": "assistant",
+        "content": "Any specific duration constraints for the assessment?"
+      },
+      { "role": "user", "content": "Keep it under 45 minutes total" }
+    ],
+    "expected_shortlist": ["Occupational Personality Questionnaire OPQ32r", "Verify - Verbal Ability - Next Generation", "SHL Verify Interactive - Numerical Reasoning"],
+    "min_expected_count": 2
+  },
+  {
+    "trace_id": "trace_003",
+    "persona": "Entry-level Customer Service",
+    "facts": {
+      "role": "Customer Service Representative",
+      "seniority": "entry",
+      "key_skills": ["communication", "customer focus", "situational judgment"],
+      "industry": "retail"
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "Looking for assessments for entry-level customer service reps"
+      },
+      {
+        "role": "assistant",
+        "content": "What qualities do you need to assess?"
+      },
+      {
+        "role": "user",
+        "content": "Customer focus, problem solving in customer situations, and communication"
+      },
+      {
+        "role": "assistant",
+        "content": "Is there a time limit for candidates?"
+      },
+      { "role": "user", "content": "30 minutes or less would be ideal" }
+    ],
+    "expected_shortlist":["Customer Service Phone Simulation", "Verify - Verbal Ability - Next Generation"],
+    "min_expected_count": 1
+  },
+  {
+    "trace_id": "trace_004",
+    "persona": "Data Scientist Hiring",
+    "facts": {
+      "role": "Data Scientist",
+      "seniority": "mid",
+      "key_skills": [
+        "numerical reasoning",
+        "python",
+        "analytics",
+        "machine learning"
+      ],
+      "industry": "technology"
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "We need to assess candidates for a data scientist role"
+      },
+      {
+        "role": "assistant",
+        "content": "What seniority level and key skills should we assess?"
+      },
+      {
+        "role": "user",
+        "content": "Mid-level, strong numerical and analytical ability, plus Python and ML knowledge"
+      },
+      {
+        "role": "assistant",
+        "content": "Any personality or soft skills to include?"
+      },
+      {
+        "role": "user",
+        "content": "Not specifically, focus on technical and cognitive ability"
+      }
+    ],
+    "expected_shortlist": ["SHL Verify Interactive - Numerical Reasoning", "Verify - Verbal Ability - Next Generation"],
+    "min_expected_count": 1
+  },
+  {
+    "trace_id": "trace_005",
+    "persona": "Executive C-Suite Hire",
+    "facts": {
+      "role": "Chief Technology Officer",
+      "seniority": "executive",
+      "key_skills": [
+        "leadership",
+        "strategic thinking",
+        "communication",
+        "negotiation"
+      ],
+      "industry": "technology"
+    },
+    "conversation": [
+      { "role": "user", "content": "Hiring a CTO for our tech company" },
+      {
+        "role": "assistant",
+        "content": "What competencies should we focus on for this executive role?"
+      },
+      {
+        "role": "user",
+        "content": "Strategic leadership, communication with the board, and technology vision"
+      },
+      {
+        "role": "assistant",
+        "content": "Should we include any personality assessments?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, personality is important for a C-suite hire"
+      }
+    ],
+    "expected_shortlist": ["Occupational Personality Questionnaire OPQ32r", "Verify - Verbal Ability - Next Generation"],
+    "min_expected_count": 1
+  },
+  {
+    "trace_id": "trace_006",
+    "persona": "JD Paste - Software Engineer",
+    "facts": {
+      "role": "Senior Software Engineer",
+      "seniority": "senior",
+      "key_skills": ["java", "python", "leadership", "communication"],
+      "industry": "technology"
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "Job Title: Senior Software Engineer\nResponsibilities:\n- Lead design of distributed microservices\n- Mentor junior engineers\n- Collaborate with product and stakeholders\nRequirements:\n- 7+ years of Java or Python experience\n- Strong communication and leadership skills\n- Bachelor's degree in Computer Science or equivalent\nNice to have:\n- Experience with Kubernetes and cloud platforms\n- Agile/Scrum background"
+      }
+    ],
+    "expected_shortlist": ["Java 8 (New)", "Occupational Personality Questionnaire OPQ32r", "Verify - Verbal Ability - Next Generation"],
+    "min_expected_count": 2
+  },
+  {
+    "trace_id": "trace_007",
+    "persona": "Sales Role Assessment",
+    "facts": {
+      "role": "Sales Account Manager",
+      "seniority": "mid",
+      "key_skills": [
+        "sales",
+        "negotiation",
+        "communication",
+        "customer service"
+      ],
+      "industry": "sales"
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I need assessments for sales account managers"
+      },
+      {
+        "role": "assistant",
+        "content": "What level and what competencies matter most?"
+      },
+      {
+        "role": "user",
+        "content": "Mid-level, focus on negotiation, persuasion, and client relationship skills"
+      },
+      { "role": "assistant", "content": "Any industry-specific context?" },
+      {
+        "role": "user",
+        "content": "B2B software sales, deals in the $100k-$1M range"
+      }
+    ],
+    "expected_shortlist": ["Occupational Personality Questionnaire OPQ32r", "Verify - Verbal Ability - Next Generation", "SHL Verify Interactive - Numerical Reasoning"],
+    "min_expected_count": 1
+  },
+  {
+    "trace_id": "trace_008",
+    "persona": "Refinement Mid-Conversation",
+    "facts": {
+      "role": "Project Manager",
+      "seniority": "senior",
+      "key_skills": ["agile", "leadership", "communication"],
+      "duration_limit": 30
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "Hiring a senior project manager with agile experience"
+      },
+      { "role": "assistant", "content": "What skills are most important?" },
+      {
+        "role": "user",
+        "content": "Agile, stakeholder management, team leadership"
+      },
+      {
+        "role": "assistant",
+        "content": "Here are my recommendations: OPQ32r for personality and Verbal Reasoning for communication."
+      },
+      {
+        "role": "user",
+        "content": "Actually, can you remove anything over 30 minutes?"
+      }
+    ],
+    "expected_shortlist":["Verify - Verbal Ability - Next Generation", "SHL Verify Interactive - Numerical Reasoning", "Customer Service Phone Simulation"],
+    "min_expected_count": 1
+  },
+  {
+    "trace_id": "trace_009",
+    "persona": "Comparison Request",
+    "facts": {
+      "role": "General",
+      "comparison_targets": ["Occupational Personality Questionnaire OPQ32r", "Verify - Verbal Ability - Next Generation"]
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "What's the difference between OPQ32r and Verbal Reasoning?"
+      }
+    ],
+    "expected_shortlist": [],
+    "min_expected_count": 0,
+    "is_comparison": true
+  },
+  {
+    "trace_id": "trace_010",
+    "persona": "Graduate Trainee Programme",
+    "facts": {
+      "role": "Graduate Trainee",
+      "seniority": "entry",
+      "key_skills": [
+        "numerical reasoning",
+        "verbal reasoning",
+        "logical reasoning",
+        "personality"
+      ],
+      "industry": "finance"
+    },
+    "conversation": [
+      {
+        "role": "user",
+        "content": "We run a graduate trainee programme for our finance firm"
+      },
+      {
+        "role": "assistant",
+        "content": "What competencies should the assessment battery cover?"
+      },
+      {
+        "role": "user",
+        "content": "Cognitive ability across numerical, verbal, and logical reasoning, plus personality fit"
+      },
+      {
+        "role": "assistant",
+        "content": "Any duration constraint for the full battery?"
+      },
+      {
+        "role": "user",
+        "content": "Ideally 90 minutes total for the whole set"
+      }
+    ],
+    "expected_shortlist": ["SHL Verify Interactive - Numerical Reasoning", "Verify - Verbal Ability - Next Generation", "Occupational Personality Questionnaire OPQ32r"],
+    "min_expected_count": 2
+  }
+]
